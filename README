@@ -1,0 +1,13 @@
+1，注意chromedriver/windows/chromedriver.exe，driver版本要和本机安装的windows版本保持一致。
+2，linux的chrome/driver安装配置，请参考https://www.cnblogs.com/zwnsyw/p/13398007.html
+3，碰到本工程暂不支持的element：
+    安装pombuilder插件，https://github.com/logigearcorporation/pombuilder
+    鼠标右键选择检查/inspect，下面的Styles开头的菜单栏选 >>，选择“Pom Builder”
+    操作powerbi页面，露出想要捕捉的页面element
+    点击检查窗口最左上角的鼠标形状按钮，再点击想要捕捉的页面element
+    Pom Builder的窗口会显示这个element对应的各种定位方法，选择上方的Recommended Locator
+    把推荐的定位方法复制黏贴到“LOCATOR TEST”测试一下，如果找到会显示绿色的1/1
+    注意：
+        如果按照以上方法还是找不到element，在找element之前增加sleep(1)/sleep(5)
+        Pom Builder推荐的方法，可能存在直接根据caption不指定类型定位元素的情况，这对当时测试的页面没问题，
+    但是这样不够通用，可能其他页面会有相同caption的其他种类element，可以优化locator，再测试一次。
